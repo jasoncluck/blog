@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Heroku | Jason Cluck]]></title>
+  <link href="http://polar-stream-2377.herokuapp.com//blog/categories/heroku/atom.xml" rel="self"/>
+  <link href="http://polar-stream-2377.herokuapp.com//"/>
+  <updated>2012-08-10T13:07:21-04:00</updated>
+  <id>http://polar-stream-2377.herokuapp.com//</id>
+  <author>
+    <name><![CDATA[Jason Cluck]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Hello World - Initial Commit]]></title>
+    <link href="http://polar-stream-2377.herokuapp.com//blog/2012/08/10/test-post/"/>
+    <updated>2012-08-10T11:20:00-04:00</updated>
+    <id>http://polar-stream-2377.herokuapp.com//blog/2012/08/10/test-post</id>
+    <content type="html"><![CDATA[<h2>Initial Thoughts</h2>
+
+<p>This blog is finally up and running - although it is far from where I want it!  I used <a href="http://octopress.org/">Octopress</a> to generate the blog and it was really easy to configure using the provided YAML config files. Part of the reason I tried Octopress was to not code the HTML from scratch and it seems to be doing the job.  It seems very similar to WordPress but I haven't really used either extensively. Compared to web-based blogging alternatives like Tumblr, Octopress and Jekyll get a big +1 for letting me use <a href="http://en.wikipedia.org/wiki/Markdown">Markdown</a> and <a href="http://www.sublimetext.com/">Sublime Text 2</a>.</p>
+
+<h2>Deployement</h2>
+
+<p>I have been using <a href="http://www.heroku.com/">Heroku</a> for over a month now to deploy Ruby/Rails web apps.  Heroku is a service for launching web apps using a cloud application platform.  It simplifies deployement, works well with git, and scales very nicely using "Dynos".  Heroku utilizes the PostgreSQL database for apps in the production environment.  Of course, this database has all the common problems any SQL database seems to run into.  One of the creators of Heroku, Adam Wiggins, commented on database scaling:</p>
+
+<p>  <em>"A question I’m often asked about Heroku is: “How do you scale the SQL database?” There’s a lot of things I can say about using caching, sharding, and other techniques to take load off the database. But the actual answer is: we don’t. SQL databases are fundamentally non-scalable, and there is no magical pixie dust that we, or anyone, can sprinkle on them to suddenly make them scale."</em></p>
+
+<p>The weakest link of a SaaS app always seems to the persistance layer and unfortunately, Heroku will not provide an answer for that.</p>
+
+<h2>Future Work</h2>
+
+<p>I plan on spending the rest of my summer focusing on Rails and the <a href="https://www.coursera.org/course/saas">SaaS course at UC Berkeley</a>.  I hope this blog will be able to help others who are also trying to learn more about SaaS developement.  In addition to publishing more content, I plan to update the CSS, and configure a custom DNS.  The updated code should be available on my <a href="https://github.com/jasoncluck">GitHub</a> in the blog repository. Let me know if you have any ideas or questions!</p>
+
+<p>-Jason</p>
+]]></content>
+  </entry>
+  
+</feed>

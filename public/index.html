@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>My Octopress Blog</title>
-  <meta name="author" content="Your Name">
+  <title>Jason Cluck</title>
+  <meta name="author" content="Jason Cluck">
 
   
-  <meta name="description" content=" Blog Archives Recent Posts ">
+  <meta name="description" content="Initial Thoughts This blog is finally up and running - although it is far from where I want it! I used Octopress to generate the blog and it was &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,13 +18,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://polar-stream-2377.herokuapp.com//">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="Jason Cluck" type="application/atom+xml">
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
@@ -35,9 +35,9 @@
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">My Octopress Blog</a></h1>
+  <h1><a href="/">Jason Cluck</a></h1>
   
-    <h2>A blogging framework for hackers.</h2>
+    <h2>Programming - and other bits</h2>
   
 </hgroup>
 
@@ -49,7 +49,7 @@
   
 <form action="http://google.com/search" method="get">
   <fieldset role="search">
-    <input type="hidden" name="q" value="site:yoursite.com" />
+    <input type="hidden" name="q" value="site:polar-stream-2377.herokuapp.com/" />
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
@@ -65,6 +65,58 @@
       <div class="blog-index">
   
   
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/08/10/test-post/">Hello World - Initial Commit</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-10T11:20:00-04:00" pubdate data-updated="true">Aug 10<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Initial Thoughts</h2>
+
+<p>This blog is finally up and running - although it is far from where I want it!  I used <a href="http://octopress.org/">Octopress</a> to generate the blog and it was really easy to configure using the provided YAML config files. Part of the reason I tried Octopress was to not code the HTML from scratch and it seems to be doing the job.  It seems very similar to WordPress but I haven&#8217;t really used either extensively. Compared to web-based blogging alternatives like Tumblr, Octopress and Jekyll get a big +1 for letting me use <a href="http://en.wikipedia.org/wiki/Markdown">Markdown</a> and <a href="http://www.sublimetext.com/">Sublime Text 2</a>.</p>
+
+<h2>Deployement</h2>
+
+<p>I have been using <a href="http://www.heroku.com/">Heroku</a> for over a month now to deploy Ruby/Rails web apps.  Heroku is a service for launching web apps using a cloud application platform.  It simplifies deployement, works well with git, and scales very nicely using &#8220;Dynos&#8221;.  Heroku utilizes the PostgreSQL database for apps in the production environment.  Of course, this database has all the common problems any SQL database seems to run into.  One of the creators of Heroku, Adam Wiggins, commented on database scaling:</p>
+
+<p>  <em>&#8220;A question I’m often asked about Heroku is: “How do you scale the SQL database?” There’s a lot of things I can say about using caching, sharding, and other techniques to take load off the database. But the actual answer is: we don’t. SQL databases are fundamentally non-scalable, and there is no magical pixie dust that we, or anyone, can sprinkle on them to suddenly make them scale.&#8221;</em></p>
+
+<p>The weakest link of a SaaS app always seems to the persistance layer and unfortunately, Heroku will not provide an answer for that.</p>
+
+<h2>Future Work</h2>
+
+<p>I plan on spending the rest of my summer focusing on Rails and the <a href="https://www.coursera.org/course/saas">SaaS course at UC Berkeley</a>.  I hope this blog will be able to help others who are also trying to learn more about SaaS developement.  In addition to publishing more content, I plan to update the CSS, and configure a custom DNS.  The updated code should be available on my <a href="https://github.com/jasoncluck">GitHub</a> in the blog repository. Let me know if you have any ideas or questions!</p>
+
+<p>-Jason</p>
+</div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
     
     <a href="/blog/archives">Blog Archives</a>
@@ -77,9 +129,58 @@
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     
+      <li class="post">
+        <a href="/blog/2012/08/10/test-post/">Hello World - Initial Commit</a>
+      </li>
+    
   </ul>
 </section>
 
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/jasoncluck">@jasoncluck</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'jasoncluck',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("jasoncluck", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/jasoncluck" class="twitter-follow-button" data-show-count="false">Follow @jasoncluck</a>
+  
+</section>
 
 
 
@@ -91,7 +192,7 @@
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2012 - Your Name -
+  Copyright &copy; 2012 - Jason Cluck -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
