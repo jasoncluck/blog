@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Ruby | Jason Cluck]]></title>
-  <link href="http://polar-stream-2377.herokuapp.com//blog/categories/ruby/atom.xml" rel="self"/>
-  <link href="http://polar-stream-2377.herokuapp.com//"/>
-  <updated>2012-08-10T13:13:41-04:00</updated>
-  <id>http://polar-stream-2377.herokuapp.com//</id>
+  <link href="http://jcluck.herokuapp.com//blog/categories/ruby/atom.xml" rel="self"/>
+  <link href="http://jcluck.herokuapp.com//"/>
+  <updated>2012-08-10T14:26:28-04:00</updated>
+  <id>http://jcluck.herokuapp.com//</id>
   <author>
     <name><![CDATA[Jason Cluck]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Hello World - Initial Commit]]></title>
-    <link href="http://polar-stream-2377.herokuapp.com//blog/2012/08/10/test-post/"/>
+    <link href="http://jcluck.herokuapp.com//blog/2012/08/10/test-post/"/>
     <updated>2012-08-10T11:20:00-04:00</updated>
-    <id>http://polar-stream-2377.herokuapp.com//blog/2012/08/10/test-post</id>
+    <id>http://jcluck.herokuapp.com//blog/2012/08/10/test-post</id>
     <content type="html"><![CDATA[<h2>Initial Thoughts</h2>
 
 <p>This blog is finally up and running - although it is far from where I want it!  I used <a href="http://octopress.org/">Octopress</a> to generate the blog and it was really easy to configure using the provided YAML config files. Part of the reason I tried Octopress was to not code the HTML from scratch and it seems to be doing the job.  It seems very similar to WordPress but I haven't really used either extensively. Compared to web-based blogging alternatives like Tumblr, Octopress and Jekyll get a big +1 for letting me use <a href="http://en.wikipedia.org/wiki/Markdown">Markdown</a> and <a href="http://www.sublimetext.com/">Sublime Text 2</a>.</p>
