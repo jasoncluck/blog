@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ruby | Jason Cluck]]></title>
   <link href="http://jcluck.herokuapp.com//blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://jcluck.herokuapp.com//"/>
-  <updated>2012-08-13T18:06:12-04:00</updated>
+  <updated>2012-08-13T18:10:46-04:00</updated>
   <id>http://jcluck.herokuapp.com//</id>
   <author>
     <name><![CDATA[Jason Cluck]]></name>
@@ -29,7 +29,7 @@ class A &lt; B ; include MyModule ; end
 <!--more-->
 
 
-<p>An example of a mixin at work is found within the Array class.  An array mixes in the module Enumerable which lets the Array class respond to methods such as <em>all?</em>, <em>Any?</em>, <em>collect</em>, <em>find</em>, <em>inject</em>, <em>map</em> etc.  Before Array responds to the Enumerable methods, it must first fulfill the contract defined by the Enumerable documentation.  In this case, it states that Array must provide an <em>each</em> method [2].  Sure enough, in the Array documentation <a href="http://www.ruby-doc.org/core-1.9.3/Array.html#method-i-each">each</a> is defined and we can view the source.</p>
+<p>An example of a mixin at work is found within the Array class.  An array mixes in the module Enumerable which lets the Array class respond to methods such as <em>all?</em>, <em>Any?</em>, <em>collect</em>, <em>find</em>, <em>inject</em>, <em>map</em>, etc.  Before Array responds to the Enumerable methods, it must first fulfill the contract defined by the Enumerable documentation.  In this case, it states that Array must provide an <em>each</em> method [2].  Sure enough, in the Array documentation <a href="http://www.ruby-doc.org/core-1.9.3/Array.html#method-i-each">each</a> is defined and we can view the source.</p>
 
 <p>This contract system is nice because only part of the contract needs to be fulfilled if the entire module will not be utilized.  Going back to Enumerable, the documentation states:</p>
 
@@ -37,7 +37,7 @@ class A &lt; B ; include MyModule ; end
 
 <p>The &lt;=> operator, or sometimes referred to as the rocketship operator, defines how elements in a collection compare to each other (like compareTo in Java).  The documentation states that unless we want the methods: {<em>#max</em>, <em>#min</em>, or <em>#sort</em>}, &lt;=> can remain undefined in the class which mixes in Enumerable.  The Array class should respond to these methods so it also defines &lt;=>.  By having a flexible contract system, mixins are easy to implement.</p>
 
-<p>Mixins are tied closely to Duck typing.  "Duck typing is a style of dynamic typing in which an object's methods and properties determine the valid semantics, rather than its inheritance from a particular class or implementation of a specific interface"[3].  The name "Duck typing" comes from the idea that if a bird quacks like a duck, looks like a duck, it is a duck.  In Ruby an example would be if a class responds to methods like an Array, it is an Array.  Sometimes people refer to this behaviour as "quacking" (seriously)  so if something quacks like an ennumerable, we will treat it as such.  I think this really shows the thought process one should have when programming in Ruby.  Classes are not defined by what they inherit, but by what they respond to.  The code:
+<p>Mixins are tied closely to Duck typing.  "Duck typing is a style of dynamic typing in which an object's methods and properties determine the valid semantics, rather than its inheritance from a particular class or implementation of a specific interface"[3].  The name "Duck typing" comes from the idea that if a bird quacks and looks like a druck, it is a duck.  In Ruby an example would be if a class responds to methods like an Array, it is an Array.  Sometimes people refer to this behaviour as "quacking" (seriously)  so if something quacks like an ennumerable, we will treat it as such.  I think this really shows the thought process one should have when programming in Ruby.  Classes are not defined by what they inherit, but by what they respond to.  The code:
 <code>ruby
 a.foo
 </code></p>
