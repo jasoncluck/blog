@@ -10,6 +10,8 @@ categories: [Octopress, Heroku, Ruby, Rails]
 
 This blog is finally up and running - although it is far from where I want it!  I used [Octopress](http://octopress.org/) to generate the blog and it was really easy to configure using the provided YAML config files. Part of the reason I tried Octopress was to not code the HTML from scratch and it seems to be doing the job.  It seems very similar to WordPress but I haven't really used either extensively. Compared to web-based blogging alternatives like Tumblr, Octopress and Jekyll get a big +1 for letting me use [Markdown](http://en.wikipedia.org/wiki/Markdown) and [Sublime Text 2](http://www.sublimetext.com/). 
 
+<!-- more -->
+
 ##Deployment  
 I have been using [Heroku](http://www.heroku.com/) for over a month now to deploy Ruby/Rails web apps.  Heroku is a service for launching web apps using a cloud application platform.  It simplifies deployment, works well with git, and scales very nicely using "Dynos".  Heroku utilizes the PostgreSQL database for apps in the production environment.  Of course, this database has all the common problems any SQL database seems to run into.  One of the creators of Heroku, Adam Wiggins, commented on database scaling:
 

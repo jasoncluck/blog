@@ -9,7 +9,7 @@
   <meta name="author" content="Jason Cluck">
 
   
-  <meta name="description" content="When learning Ruby, there were a couple of features that really set it apart from other OO Languages (e.g.: Java). The first of these features would &hellip;">
+  <meta name="description" content="When learning Ruby, there were a couple of features that really set it apart from other OO Languages (e.g. Java). The first of these features would &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -94,14 +94,17 @@
   </header>
 
 
-<div class="entry-content"><p>When learning Ruby, there were a couple of features that really set it apart from other OO Languages (e.g.: Java).  The first of these features would have to be mixins.  A mixin is a collection of related behaviors that can be added to any class, although in some cases the class may have to fulfill a contract to use the mixin [1].  Mixins are implemented in Ruby using Modules.  A module is just a collection of class and instance methods that contain a framework for classes.  It is important to note that a module itself is not a class.  In other words, you can&#8217;t instantiate a module.  At first this sounds a whole lot like interfaces in Java but there are a couple of differences.  First, let&#8217;s look at an example of using a mixin:</p>
+<div class="entry-content"><p>When learning Ruby, there were a couple of features that really set it apart from other OO Languages (e.g. Java). The first of these features would have to be mixins.  A mixin is a collection of related behaviors that can be added to any class, although in some cases the class may have to fulfill a contract to use the mixin [1].  Mixins are implemented in Ruby using Modules.  A module is just a collection of class and instance methods that contain a framework for classes.  It is important to note that a module itself is not a class.  In other words, you can&#8217;t instantiate a module.  At first this sounds a whole lot like interfaces in Java but there are a couple of differences.  First, let&#8217;s look at an example of using a mixin:</p>
 
 <figure class='code'><figcaption><span>Mixin Example</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">A</span> <span class="o">&lt;</span> <span class="n">B</span> <span class="p">;</span> <span class="kp">include</span> <span class="no">MyModule</span> <span class="p">;</span> <span class="k">end</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>So class A inherits from class B and class A also &#8220;mixes in&#8221; the module, MyModule.  The mixin will literally inline all the instance and class methods defined in MyModule into class A so they will be available once class A is instantiated.  Now how does this work with hierarchical inheritence in terms of priority?  A method call on an intance of class A will: Check class A itself for the method, then check any modules that were mixed-in, and lastly the call will go to class A&#8217;s method_missing handler which by default, punts the call to the superclass which is class B in this scenario.  Using mixins, the need for multiple inheritance is eliminated which allows for simpler code.</p>
+<p>Class A inherits from class B and class A also &#8220;mixes in&#8221; the module, MyModule.  The mixin will literally inline all the instance and class methods defined in MyModule into class A so they will be available once class A is instantiated.  Now how does this work with hierarchical inheritence in terms of priority?  A method call on an intance of class A will: Check class A itself for the method, then check any modules that were mixed-in, and lastly the call will go to class A&#8217;s method_missing handler which by default, punts the call to the superclass which is class B in this scenario.  Using mixins, the need for multiple inheritance is eliminated which allows for simpler code.</p>
+
+<!--more-->
+
 
 <p>An example of a mixin at work is found within the Array class.  An array mixes in the module Enumerable which lets the Array class respond to methods such as <em>all?</em>, <em>Any?</em>, <em>collect</em>, <em>find</em>, <em>inject</em>, <em>map</em> etc.  Before Array responds to the Enumerable methods, it must first fulfill the contract defined by the Enumerable documentation.  In this case, it states that Array must provide an <em>each</em> method [2].  Sure enough, in the Array documentation <a href="http://www.ruby-doc.org/core-1.9.3/Array.html#method-i-each">each</a> is defined and we can view the source.</p>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ruby | Jason Cluck]]></title>
   <link href="http://jcluck.herokuapp.com//blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://jcluck.herokuapp.com//"/>
-  <updated>2012-08-13T17:53:49-04:00</updated>
+  <updated>2012-08-13T18:06:12-04:00</updated>
   <id>http://jcluck.herokuapp.com//</id>
   <author>
     <name><![CDATA[Jason Cluck]]></name>
@@ -18,13 +18,16 @@
     <link href="http://jcluck.herokuapp.com//blog/2012/08/13/mixins/"/>
     <updated>2012-08-13T10:16:00-04:00</updated>
     <id>http://jcluck.herokuapp.com//blog/2012/08/13/mixins</id>
-    <content type="html"><![CDATA[<p>When learning Ruby, there were a couple of features that really set it apart from other OO Languages (e.g.: Java).  The first of these features would have to be mixins.  A mixin is a collection of related behaviors that can be added to any class, although in some cases the class may have to fulfill a contract to use the mixin [1].  Mixins are implemented in Ruby using Modules.  A module is just a collection of class and instance methods that contain a framework for classes.  It is important to note that a module itself is not a class.  In other words, you can't instantiate a module.  At first this sounds a whole lot like interfaces in Java but there are a couple of differences.  First, let's look at an example of using a mixin:</p>
+    <content type="html"><![CDATA[<p>When learning Ruby, there were a couple of features that really set it apart from other OO Languages (e.g. Java). The first of these features would have to be mixins.  A mixin is a collection of related behaviors that can be added to any class, although in some cases the class may have to fulfill a contract to use the mixin [1].  Mixins are implemented in Ruby using Modules.  A module is just a collection of class and instance methods that contain a framework for classes.  It is important to note that a module itself is not a class.  In other words, you can't instantiate a module.  At first this sounds a whole lot like interfaces in Java but there are a couple of differences.  First, let's look at an example of using a mixin:</p>
 
 <p><code>ruby Mixin Example
 class A &lt; B ; include MyModule ; end
 </code></p>
 
-<p>So class A inherits from class B and class A also "mixes in" the module, MyModule.  The mixin will literally inline all the instance and class methods defined in MyModule into class A so they will be available once class A is instantiated.  Now how does this work with hierarchical inheritence in terms of priority?  A method call on an intance of class A will: Check class A itself for the method, then check any modules that were mixed-in, and lastly the call will go to class A's method_missing handler which by default, punts the call to the superclass which is class B in this scenario.  Using mixins, the need for multiple inheritance is eliminated which allows for simpler code.</p>
+<p>Class A inherits from class B and class A also "mixes in" the module, MyModule.  The mixin will literally inline all the instance and class methods defined in MyModule into class A so they will be available once class A is instantiated.  Now how does this work with hierarchical inheritence in terms of priority?  A method call on an intance of class A will: Check class A itself for the method, then check any modules that were mixed-in, and lastly the call will go to class A's method_missing handler which by default, punts the call to the superclass which is class B in this scenario.  Using mixins, the need for multiple inheritance is eliminated which allows for simpler code.</p>
+
+<!--more-->
+
 
 <p>An example of a mixin at work is found within the Array class.  An array mixes in the module Enumerable which lets the Array class respond to methods such as <em>all?</em>, <em>Any?</em>, <em>collect</em>, <em>find</em>, <em>inject</em>, <em>map</em> etc.  Before Array responds to the Enumerable methods, it must first fulfill the contract defined by the Enumerable documentation.  In this case, it states that Array must provide an <em>each</em> method [2].  Sure enough, in the Array documentation <a href="http://www.ruby-doc.org/core-1.9.3/Array.html#method-i-each">each</a> is defined and we can view the source.</p>
 
@@ -55,6 +58,9 @@ a.foo
     <content type="html"><![CDATA[<h2>Initial Thoughts</h2>
 
 <p>This blog is finally up and running - although it is far from where I want it!  I used <a href="http://octopress.org/">Octopress</a> to generate the blog and it was really easy to configure using the provided YAML config files. Part of the reason I tried Octopress was to not code the HTML from scratch and it seems to be doing the job.  It seems very similar to WordPress but I haven't really used either extensively. Compared to web-based blogging alternatives like Tumblr, Octopress and Jekyll get a big +1 for letting me use <a href="http://en.wikipedia.org/wiki/Markdown">Markdown</a> and <a href="http://www.sublimetext.com/">Sublime Text 2</a>.</p>
+
+<!-- more -->
+
 
 <h2>Deployment</h2>
 
