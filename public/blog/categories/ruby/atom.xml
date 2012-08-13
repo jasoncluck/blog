@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ruby | Jason Cluck]]></title>
   <link href="http://jcluck.herokuapp.com//blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://jcluck.herokuapp.com//"/>
-  <updated>2012-08-13T12:54:52-04:00</updated>
+  <updated>2012-08-13T17:53:49-04:00</updated>
   <id>http://jcluck.herokuapp.com//</id>
   <author>
     <name><![CDATA[Jason Cluck]]></name>
@@ -39,7 +39,7 @@ class A &lt; B ; include MyModule ; end
 a.foo
 </code></p>
 
-<p>  should be read as "call method foo on object a" where object a is the receiver.  Since classes are defined by the methods they respond to, mixins allow for duck typing.</p>
+<p>  should be read as "call method foo on object a" where object a is the receiver.  Since classes are defined by the methods they respond to, mixins go well with duck typing.</p>
 
 <p>[1]: <a href="http://beta.saasbook.info/">Engineering Long-Lasting Software: An Agile Approach Using SaaS and Cloud Computing (Alpha Edition)</a>   <br/>
 [2]: <a href="http://ruby-doc.org/core-1.9.3/Enumerable.html">Enumerable Class Definition</a> <br/>

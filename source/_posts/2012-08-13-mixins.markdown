@@ -27,7 +27,7 @@ Mixins are tied closely to Duck typing.  "Duck typing is a style of dynamic typi
 a.foo
 ```
 
-  should be read as "call method foo on object a" where object a is the receiver.  Since classes are defined by the methods they respond to, mixins allow for duck typing.
+  should be read as "call method foo on object a" where object a is the receiver.  Since classes are defined by the methods they respond to, mixins go well with duck typing.
 
 
 
