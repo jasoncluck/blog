@@ -4,7 +4,7 @@
   <title><![CDATA[Jason Cluck]]></title>
   <link href="http://jcluck.herokuapp.com//atom.xml" rel="self"/>
   <link href="http://jcluck.herokuapp.com//"/>
-  <updated>2012-08-11T10:20:28-04:00</updated>
+  <updated>2012-08-13T12:54:52-04:00</updated>
   <id>http://jcluck.herokuapp.com//</id>
   <author>
     <name><![CDATA[Jason Cluck]]></name>
@@ -12,6 +12,43 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Mixins and Duck Typing]]></title>
+    <link href="http://jcluck.herokuapp.com//blog/2012/08/13/mixins/"/>
+    <updated>2012-08-13T10:16:00-04:00</updated>
+    <id>http://jcluck.herokuapp.com//blog/2012/08/13/mixins</id>
+    <content type="html"><![CDATA[<p>When learning Ruby, there were a couple of features that really set it apart from other OO Languages (e.g.: Java).  The first of these features would have to be mixins.  A mixin is a collection of related behaviors that can be added to any class, although in some cases the class may have to fulfill a contract to use the mixin [1].  Mixins are implemented in Ruby using Modules.  A module is just a collection of class and instance methods that contain a framework for classes.  It is important to note that a module itself is not a class.  In other words, you can&#8217;t instantiate a module.  At first this sounds a whole lot like interfaces in Java but there are a couple of differences.  First, let&#8217;s look at an example of using a mixin:</p>
+
+<figure class='code'><figcaption><span>Mixin Example</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">A</span> <span class="o">&lt;</span> <span class="n">B</span> <span class="p">;</span> <span class="kp">include</span> <span class="no">MyModule</span> <span class="p">;</span> <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>So class A inherits from class B and class A also &#8220;mixes in&#8221; the module, MyModule.  The mixin will literally inline all the instance and class methods defined in MyModule into class A so they will be available once class A is instantiated.  Now how does this work with hierarchical inheritence in terms of priority?  A method call on an intance of class A will: Check class A itself for the method, then check any modules that were mixed-in, and lastly the call will go to class A&#8217;s method_missing handler which by default, punts the call to the superclass which is class B in this scenario.  Using mixins, the need for multiple inheritance is eliminated which allows for simpler code.</p>
+
+<p>An example of a mixin at work is found within the Array class.  An array mixes in the module Enumerable which lets the Array class respond to methods such as <em>all?</em>, <em>Any?</em>, <em>collect</em>, <em>find</em>, <em>inject</em>, <em>map</em> etc.  Before Array responds to the Enumerable methods, it must first fulfill the contract defined by the Enumerable documentation.  In this case, it states that Array must provide an <em>each</em> method [2].  Sure enough, in the Array documentation <a href="http://www.ruby-doc.org/core-1.9.3/Array.html#method-i-each">each</a> is defined and we can view the source.</p>
+
+<p>This contract system is nice because only part of the contract needs to be fulfilled if the entire module will not be utilized.  Going back to Enumerable, the documentation states:</p>
+
+<p><em>&#8220;If Enumerable#max, #min, or #sort is used, the objects in the collection must also implement a meaningful &lt;=> operator, as these methods rely on an ordering between members of the collection.&#8221;</em></p>
+
+<p>The &lt;=> operator, or sometimes referred to as the rocketship operator, defines how elements in a collection compare to each other (like compareTo in Java).  The documentation states that unless we want the methods: {<em>#max</em>, <em>#min</em>, or <em>#sort</em>}, &lt;=> can remain undefined in the class which mixes in Enumerable.  The Array class should respond to these methods so it also defines &lt;=>.  By having a flexible contract system, mixins are easy to implement.</p>
+
+<p>Mixins are tied closely to Duck typing.  &#8220;Duck typing is a style of dynamic typing in which an object&#8217;s methods and properties determine the valid semantics, rather than its inheritance from a particular class or implementation of a specific interface&#8221;[3].  The name &#8220;Duck typing&#8221; comes from the idea that if a bird quacks like a duck, looks like a duck, it is a duck.  In Ruby an example would be if a class responds to methods like an Array, it is an Array.  Sometimes people refer to this behaviour as &#8220;quacking&#8221; (seriously)  so if something quacks like an ennumerable, we will treat it as such.  I think this really shows the thought process one should have when programming in Ruby.  Classes are not defined by what they inherit, but by what they respond to.  The code:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">a</span><span class="o">.</span><span class="n">foo</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>  should be read as &#8220;call method foo on object a&#8221; where object a is the receiver.  Since classes are defined by the methods they respond to, mixins allow for duck typing.</p>
+
+<p>[1]: <a href="http://beta.saasbook.info/">Engineering Long-Lasting Software: An Agile Approach Using SaaS and Cloud Computing (Alpha Edition)</a>   <br/>
+[2]: <a href="http://ruby-doc.org/core-1.9.3/Enumerable.html">Enumerable Class Definition</a> <br/>
+[3]: <a href="http://en.wikipedia.org/wiki/Duck_typing">Duck Typing</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Hello World - Initial Commit]]></title>
@@ -24,7 +61,7 @@
 
 <h2>Deployment</h2>
 
-<p>I have been using <a href="http://www.heroku.com/">Heroku</a> for over a month now to deploy Ruby/Rails web apps.  Heroku is a service for launching web apps using a cloud application platform.  It simplifies deployement, works well with git, and scales very nicely using &#8220;Dynos&#8221;.  Heroku utilizes the PostgreSQL database for apps in the production environment.  Of course, this database has all the common problems any SQL database seems to run into.  One of the creators of Heroku, Adam Wiggins, commented on database scaling:</p>
+<p>I have been using <a href="http://www.heroku.com/">Heroku</a> for over a month now to deploy Ruby/Rails web apps.  Heroku is a service for launching web apps using a cloud application platform.  It simplifies deployment, works well with git, and scales very nicely using &#8220;Dynos&#8221;.  Heroku utilizes the PostgreSQL database for apps in the production environment.  Of course, this database has all the common problems any SQL database seems to run into.  One of the creators of Heroku, Adam Wiggins, commented on database scaling:</p>
 
 <p>  <em>&#8220;A question I’m often asked about Heroku is: “How do you scale the SQL database?” There’s a lot of things I can say about using caching, sharding, and other techniques to take load off the database. But the actual answer is: we don’t. SQL databases are fundamentally non-scalable, and there is no magical pixie dust that we, or anyone, can sprinkle on them to suddenly make them scale.&#8221;</em></p>
 

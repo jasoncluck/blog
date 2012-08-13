@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | Jason Cluck]]></title>
   <link href="http://jcluck.herokuapp.com//blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://jcluck.herokuapp.com//"/>
-  <updated>2012-08-11T10:20:28-04:00</updated>
+  <updated>2012-08-13T12:54:52-04:00</updated>
   <id>http://jcluck.herokuapp.com//</id>
   <author>
     <name><![CDATA[Jason Cluck]]></name>
@@ -24,7 +24,7 @@
 
 <h2>Deployment</h2>
 
-<p>I have been using <a href="http://www.heroku.com/">Heroku</a> for over a month now to deploy Ruby/Rails web apps.  Heroku is a service for launching web apps using a cloud application platform.  It simplifies deployement, works well with git, and scales very nicely using "Dynos".  Heroku utilizes the PostgreSQL database for apps in the production environment.  Of course, this database has all the common problems any SQL database seems to run into.  One of the creators of Heroku, Adam Wiggins, commented on database scaling:</p>
+<p>I have been using <a href="http://www.heroku.com/">Heroku</a> for over a month now to deploy Ruby/Rails web apps.  Heroku is a service for launching web apps using a cloud application platform.  It simplifies deployment, works well with git, and scales very nicely using "Dynos".  Heroku utilizes the PostgreSQL database for apps in the production environment.  Of course, this database has all the common problems any SQL database seems to run into.  One of the creators of Heroku, Adam Wiggins, commented on database scaling:</p>
 
 <p>  <em>"A question I’m often asked about Heroku is: “How do you scale the SQL database?” There’s a lot of things I can say about using caching, sharding, and other techniques to take load off the database. But the actual answer is: we don’t. SQL databases are fundamentally non-scalable, and there is no magical pixie dust that we, or anyone, can sprinkle on them to suddenly make them scale."</em></p>
 

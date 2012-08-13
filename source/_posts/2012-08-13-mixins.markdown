@@ -1,0 +1,40 @@
+---
+layout: post
+title: "Mixins and Duck Typing"
+date: 2012-08-13 10:16
+comments: true
+categories: [Ruby, Duck typing]
+---
+
+When learning Ruby, there were a couple of features that really set it apart from other OO Languages (e.g.: Java).  The first of these features would have to be mixins.  A mixin is a collection of related behaviors that can be added to any class, although in some cases the class may have to fulfill a contract to use the mixin [1].  Mixins are implemented in Ruby using Modules.  A module is just a collection of class and instance methods that contain a framework for classes.  It is important to note that a module itself is not a class.  In other words, you can't instantiate a module.  At first this sounds a whole lot like interfaces in Java but there are a couple of differences.  First, let's look at an example of using a mixin:  
+
+``` ruby Mixin Example
+class A < B ; include MyModule ; end
+```
+
+So class A inherits from class B and class A also "mixes in" the module, MyModule.  The mixin will literally inline all the instance and class methods defined in MyModule into class A so they will be available once class A is instantiated.  Now how does this work with hierarchical inheritence in terms of priority?  A method call on an intance of class A will: Check class A itself for the method, then check any modules that were mixed-in, and lastly the call will go to class A's method_missing handler which by default, punts the call to the superclass which is class B in this scenario.  Using mixins, the need for multiple inheritance is eliminated which allows for simpler code.  
+
+An example of a mixin at work is found within the Array class.  An array mixes in the module Enumerable which lets the Array class respond to methods such as _all?_, _Any?_, _collect_, _find_, _inject_, _map_ etc.  Before Array responds to the Enumerable methods, it must first fulfill the contract defined by the Enumerable documentation.  In this case, it states that Array must provide an _each_ method [2].  Sure enough, in the Array documentation [each](http://www.ruby-doc.org/core-1.9.3/Array.html#method-i-each) is defined and we can view the source.  
+
+This contract system is nice because only part of the contract needs to be fulfilled if the entire module will not be utilized.  Going back to Enumerable, the documentation states:  
+
+*"If Enumerable#max, #min, or #sort is used, the objects in the collection must also implement a meaningful <=> operator, as these methods rely on an ordering between members of the collection."*  
+
+The <=> operator, or sometimes referred to as the rocketship operator, defines how elements in a collection compare to each other (like compareTo in Java).  The documentation states that unless we want the methods: {_#max_, _#min_, or _#sort_}, <=> can remain undefined in the class which mixes in Enumerable.  The Array class should respond to these methods so it also defines <=>.  By having a flexible contract system, mixins are easy to implement.
+
+Mixins are tied closely to Duck typing.  "Duck typing is a style of dynamic typing in which an object's methods and properties determine the valid semantics, rather than its inheritance from a particular class or implementation of a specific interface"[3].  The name "Duck typing" comes from the idea that if a bird quacks like a duck, looks like a duck, it is a duck.  In Ruby an example would be if a class responds to methods like an Array, it is an Array.  Sometimes people refer to this behaviour as "quacking" (seriously)  so if something quacks like an ennumerable, we will treat it as such.  I think this really shows the thought process one should have when programming in Ruby.  Classes are not defined by what they inherit, but by what they respond to.  The code:
+``` ruby 
+a.foo
+```
+
+  should be read as "call method foo on object a" where object a is the receiver.  Since classes are defined by the methods they respond to, mixins allow for duck typing.
+
+
+
+	
+
+
+\[1\]: [Engineering Long-Lasting Software: An Agile Approach Using SaaS and Cloud Computing (Alpha Edition)](http://beta.saasbook.info/)     
+\[2\]: [Enumerable Class Definition](http://ruby-doc.org/core-1.9.3/Enumerable.html)   
+\[3\]: [Duck Typing](http://en.wikipedia.org/wiki/Duck_typing)
+
