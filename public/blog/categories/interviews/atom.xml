@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Interviews | Jason Cluck]]></title>
   <link href="http://jcluck.herokuapp.com//blog/categories/interviews/atom.xml" rel="self"/>
   <link href="http://jcluck.herokuapp.com//"/>
-  <updated>2013-01-10T20:09:20-05:00</updated>
+  <updated>2013-01-10T20:13:51-05:00</updated>
   <id>http://jcluck.herokuapp.com//</id>
   <author>
     <name><![CDATA[Jason Cluck]]></name>
@@ -18,7 +18,7 @@
     <link href="http://jcluck.herokuapp.com//blog/2013/01/10/amazon/"/>
     <updated>2013-01-10T15:23:00-05:00</updated>
     <id>http://jcluck.herokuapp.com//blog/2013/01/10/amazon</id>
-    <content type="html"><![CDATA[<p>Today I had my phone interviews with Amazon for the Software Engineering Intern position in Seattle.  This was my first "real" technical interview and consisted of two 45 minute sessions.  Both interviewers were very nice and the they didn't waste any time getting to the technical questions. It began with simple OO questions such as:</p>
+    <content type="html"><![CDATA[<p>Today I had my phone interviews with Amazon for the Software Engineering Intern position in Seattle.  This was my first "real" technical interview and consisted of two 45 minute sessions.  Both interviewers were very nice and they didn't waste any time getting to the technical questions. It began with simple OO questions such as:</p>
 
 <ul>
 <li><p>How are abstract classes and interfaces different?</p></li>

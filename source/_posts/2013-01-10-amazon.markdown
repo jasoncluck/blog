@@ -6,7 +6,7 @@ comments: true
 categories: Amazon Interviews
 ---
 
-Today I had my phone interviews with Amazon for the Software Engineering Intern position in Seattle.  This was my first "real" technical interview and consisted of two 45 minute sessions.  Both interviewers were very nice and the they didn't waste any time getting to the technical questions. It began with simple OO questions such as: 
+Today I had my phone interviews with Amazon for the Software Engineering Intern position in Seattle.  This was my first "real" technical interview and consisted of two 45 minute sessions.  Both interviewers were very nice and they didn't waste any time getting to the technical questions. It began with simple OO questions such as: 
 
 * How are abstract classes and interfaces different?
 
