@@ -3,23 +3,22 @@
 // The following are ordered in terms of vague importance.
 
 //red color
-$main-color:  lighten(#811919,10);
+$main-color:  lighten(#FFF,10);
 
-$page-bg: lighten($main-color,20);
 //This controls the background. 
-$page-bg: darken(#99b2cc, 10);
+$page-bg: $main-color;
 
 //This controls the header. 
 $header-bg: darken($main-color,17);
-$title-color: lighten($header-bg,100);
+$title-color: #3B3B3B;
 $subtitle-color: lighten($title-color,0);
 
 //This controls the navigation br
 $nav-bg: desaturate(darken($main-color, 2), 50);
 $nav-bg-back: linear-gradient(lighten($nav-bg, 8), $nav-bg, darken($nav-bg, 11));
-$link-color: darken($main-color, 10);
-$link-color-hover: darken($main-color, 20);
-$link-color-visited: darken($main-color,10);
+$link-color: darken($title-color, 10);
+$link-color-hover: darken($title-color, 20);
+$link-color-visited: darken($title-color,10);
 $link-color-active: lighten($link-color-hover,10);
 
 $nav-link-color: darken($main-color, 20);

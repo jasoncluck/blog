@@ -4,7 +4,7 @@
   <title><![CDATA[Jason Cluck]]></title>
   <link href="http://jcluck.herokuapp.com//atom.xml" rel="self"/>
   <link href="http://jcluck.herokuapp.com//"/>
-  <updated>2012-08-14T00:22:26-04:00</updated>
+  <updated>2013-01-10T19:27:19-05:00</updated>
   <id>http://jcluck.herokuapp.com//</id>
   <author>
     <name><![CDATA[Jason Cluck]]></name>
@@ -12,6 +12,139 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Amazon Interview]]></title>
+    <link href="http://jcluck.herokuapp.com//blog/2013/01/10/amazon/"/>
+    <updated>2013-01-10T15:23:00-05:00</updated>
+    <id>http://jcluck.herokuapp.com//blog/2013/01/10/amazon</id>
+    <content type="html"><![CDATA[<p>Today I had my phone interviews with Amazon for the Software Engineering Intern position in Seattle.  This was my first &#8220;real&#8221; technical interview and consisted of two 45 minute sessions.  Both interviewers were very nice and the they didn&#8217;t waste any time getting to the technical questions. It began with simple OO questions such as:</p>
+
+<ul>
+<li><p>How are abstract classes and interfaces different?</p></li>
+<li><p>What are the differences between runtime exceptions and a checked exception?</p></li>
+</ul>
+
+
+<!--more-->
+
+
+<p>There were some more questions like this but I don&#8217;t recall all of them.  Next was the programming portion so I was told to hop on Collabedit where the interviewer typed comments describing what the program should do.  I used Java because the interviewers knew it and I&#8217;ve been practicing with it.  The first program was a pretty basic hash problem where I had to write a function that returned the intersection of two input sets.  I mentioned the brute-force O(n<sup>2)</sup> time approach with O(1) space and then decided to use a HashMap&lt;Integer, Boolean> for my implementation for O(n) time and O(n) space.  I initially just used the map&#8217;s value to indicate whether the element was inserted or not allowing for duplicates but later used the value to filter out duplications once the interviewer asked me to.</p>
+
+<p>The second question was to implement a deck of cards along with shuffle() and deal().  Once again a pretty typical question and my answer was pretty standard although I disliked the way I handled the randomization in shuffle().  I realized that repeating rand % 52 until all the empty slots are filled would take forever but my workaround wasn&#8217;t ideal.  Anyways, the interviewer then let me ask some questions about Amazon so we talked about team sizes, interaction, and the people.</p>
+
+<p>The next interviewer covered one of the projects on my resume, followed by some more quick questions that covered sets, lists, and maps.  He then asked me to write a function that takes in two strings, A &amp; B.  The function then returns a String with the characters of A in the order of B.  An example of this is A: cat, B: tar, sorted: tac.  Notice how &#8216;c&#8217; is not in B so it is just pushed to end of the returned list.  I didn&#8217;t quite finish my implementation during the interview but this is an example of a solution I wrote up afterwards.  I haven&#8217;t tested it thoroughly but it works for simple cases.</p>
+
+<figure class='code'><figcaption><span>Sort Example</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">sort</span><span class="o">(</span><span class="s">&quot;catt&quot;</span><span class="o">,</span> <span class="s">&quot;tar&quot;</span><span class="o">));</span>
+</span><span class='line'>      <span class="cm">/* prints &quot;tact&quot; */</span>
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'>  
+</span><span class='line'>  
+</span><span class='line'>  <span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">sort</span><span class="o">(</span><span class="n">String</span> <span class="n">A</span><span class="o">,</span> <span class="n">String</span> <span class="n">B</span><span class="o">){</span>
+</span><span class='line'>      <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Character</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">hm</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Character</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;();</span>
+</span><span class='line'>      <span class="n">String</span> <span class="n">sorted</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="o">;</span>
+</span><span class='line'>      
+</span><span class='line'>      <span class="cm">/* Add all the elements in B to the HashMap, initialize value to 0 */</span>
+</span><span class='line'>      <span class="k">for</span><span class="o">(</span> <span class="kt">char</span> <span class="n">c</span> <span class="o">:</span> <span class="n">B</span><span class="o">.</span><span class="na">toCharArray</span><span class="o">()</span> <span class="o">){</span>
+</span><span class='line'>          <span class="n">hm</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">c</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+</span><span class='line'>      <span class="o">}</span>
+</span><span class='line'>      
+</span><span class='line'>      <span class="cm">/* Now check a to see if any of these values are also in A */</span>
+</span><span class='line'>      <span class="k">for</span><span class="o">(</span> <span class="kt">char</span> <span class="n">c</span> <span class="o">:</span> <span class="n">A</span><span class="o">.</span><span class="na">toCharArray</span><span class="o">()</span> <span class="o">){</span>
+</span><span class='line'>          <span class="k">if</span><span class="o">(</span><span class="n">hm</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">c</span><span class="o">)){</span>
+</span><span class='line'>              <span class="cm">/* increment key by 1 if both strings contain it */</span>
+</span><span class='line'>              <span class="n">hm</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">c</span><span class="o">,</span> <span class="n">hm</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">c</span><span class="o">)</span> <span class="o">+</span> <span class="mi">1</span><span class="o">);</span>
+</span><span class='line'>          <span class="o">}</span>
+</span><span class='line'>      <span class="o">}</span>
+</span><span class='line'>      
+</span><span class='line'>      <span class="k">for</span><span class="o">(</span><span class="kt">char</span> <span class="n">c</span> <span class="o">:</span> <span class="n">B</span><span class="o">.</span><span class="na">toCharArray</span><span class="o">()){</span>
+</span><span class='line'>          <span class="cm">/* If the value exists in the Hashmap, it should be in the order exactly as in B */</span>
+</span><span class='line'>          
+</span><span class='line'>          <span class="cm">/* What if there are repeats? Check to see if we have multiples */</span>
+</span><span class='line'>          <span class="k">if</span><span class="o">(</span><span class="n">hm</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">c</span><span class="o">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">){</span>
+</span><span class='line'>              <span class="cm">/* Using concatenation but should use a StringBuilder for better runtime */</span>
+</span><span class='line'>              <span class="n">sorted</span> <span class="o">+=</span> <span class="n">c</span><span class="o">;</span>
+</span><span class='line'>              <span class="n">hm</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">c</span><span class="o">,</span> <span class="n">hm</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">c</span><span class="o">)-</span><span class="mi">1</span><span class="o">);</span> <span class="c1">//subtract 1 from the count</span>
+</span><span class='line'>          <span class="o">}</span>
+</span><span class='line'>          <span class="cm">/* Otherwise these elements exist in B but not in A so we don&#39;t need them! */</span>
+</span><span class='line'>      <span class="o">}</span>
+</span><span class='line'>      
+</span><span class='line'>      <span class="cm">/* The last thing to do is append the additional elements in A but not in B to the returned string */</span>
+</span><span class='line'>      <span class="k">for</span><span class="o">(</span> <span class="kt">char</span> <span class="n">c</span> <span class="o">:</span> <span class="n">A</span><span class="o">.</span><span class="na">toCharArray</span><span class="o">()){</span>
+</span><span class='line'>          
+</span><span class='line'>          <span class="cm">/* Case where the key didn&#39;t exist in b, append it to the end */</span>
+</span><span class='line'>          <span class="k">if</span><span class="o">(</span><span class="n">hm</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">c</span><span class="o">)</span> <span class="o">==</span> <span class="kc">null</span><span class="o">){</span>
+</span><span class='line'>              <span class="n">sorted</span> <span class="o">+=</span> <span class="n">c</span><span class="o">;</span>
+</span><span class='line'>          <span class="o">}</span>
+</span><span class='line'>          
+</span><span class='line'>          <span class="cm">/* Case where key did exist in b but not all the replicas were in B */</span>
+</span><span class='line'>          <span class="k">else</span> <span class="nf">if</span><span class="o">(</span><span class="n">hm</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">c</span><span class="o">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">){</span>
+</span><span class='line'>              <span class="n">sorted</span> <span class="o">+=</span> <span class="n">c</span><span class="o">;</span>
+</span><span class='line'>              <span class="n">hm</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">c</span><span class="o">,</span> <span class="n">hm</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">c</span><span class="o">)-</span><span class="mi">1</span><span class="o">);</span> <span class="c1">//decrement value in table</span>
+</span><span class='line'>              
+</span><span class='line'>          <span class="o">}</span>
+</span><span class='line'>      <span class="o">}</span>
+</span><span class='line'>      <span class="k">return</span> <span class="n">sorted</span><span class="o">;</span>
+</span><span class='line'>  <span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>After the interview I was not too happy with my performance but it was a great experience.  To prepare for it I have been reading Cracking the Coding Interview so I will keep going at that and schedule some more interviews for more practice.  I would definitely recommend the book for anyone who is interested in a Software Engineering position at a major technology company like Amazon, Google or Apple.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Mixins and Duck Typing]]></title>

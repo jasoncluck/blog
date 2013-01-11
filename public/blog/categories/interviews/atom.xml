@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Interviews | Jason Cluck]]></title>
   <link href="http://jcluck.herokuapp.com//blog/categories/interviews/atom.xml" rel="self"/>
   <link href="http://jcluck.herokuapp.com//"/>
-  <updated>2013-01-10T17:24:26-05:00</updated>
+  <updated>2013-01-10T19:27:19-05:00</updated>
   <id>http://jcluck.herokuapp.com//</id>
   <author>
     <name><![CDATA[Jason Cluck]]></name>
@@ -18,18 +18,22 @@
     <link href="http://jcluck.herokuapp.com//blog/2013/01/10/amazon/"/>
     <updated>2013-01-10T15:23:00-05:00</updated>
     <id>http://jcluck.herokuapp.com//blog/2013/01/10/amazon</id>
-    <content type="html"><![CDATA[<p>Today I had my interview with Amazon for the Software Engineering Intern position in Seattle.  This was my first "real" techincal interview and consisted of two 45 minute sessions.  Both interviewers were very nice and the first one didn't waste any time with getting to the technical questions. It began with simple OO questions such as:
-* How are abstract classes and interfaces different?
-* What are the differences between runtime exceptions and a checked exception.</p>
+    <content type="html"><![CDATA[<p>Today I had my phone interviews with Amazon for the Software Engineering Intern position in Seattle.  This was my first "real" technical interview and consisted of two 45 minute sessions.  Both interviewers were very nice and the they didn't waste any time getting to the technical questions. It began with simple OO questions such as:</p>
+
+<ul>
+<li><p>How are abstract classes and interfaces different?</p></li>
+<li><p>What are the differences between runtime exceptions and a checked exception?</p></li>
+</ul>
+
 
 <!--more-->
 
 
-<p>There were some more but I don't recall all of them.  Next was the actually programming portion so I was told to hop on collabedit where the interviewer typed comments describing what the program should do.  The first program was a pretty basic set problem where I had to write a function that returned the intersection two input sets.  I mentioned the brute-force O(n<sup>2)</sup> time approach with O(1) space and then decided to use a HashMap&lt;Integer, Boolean> for my implementation.  I initially just used the map's value to indicate whether the element was inserted or not allowing for duplicates but later used the value to filter out duplications once the interviewer asked me to.</p>
+<p>There were some more questions like this but I don't recall all of them.  Next was the programming portion so I was told to hop on Collabedit where the interviewer typed comments describing what the program should do.  I used Java because the interviewers knew it and I've been practicing with it.  The first program was a pretty basic hash problem where I had to write a function that returned the intersection of two input sets.  I mentioned the brute-force O(n<sup>2)</sup> time approach with O(1) space and then decided to use a HashMap&lt;Integer, Boolean> for my implementation for O(n) time and O(n) space.  I initially just used the map's value to indicate whether the element was inserted or not allowing for duplicates but later used the value to filter out duplications once the interviewer asked me to.</p>
 
 <p>The second question was to implement a deck of cards along with shuffle() and deal().  Once again a pretty typical question and my answer was pretty standard although I disliked the way I handled the randomization in shuffle().  I realized that repeating rand % 52 until all the empty slots are filled would take forever but my workaround wasn't ideal.  Anyways, the interviewer then let me ask some questions about Amazon so we talked about team sizes, interaction, and the people.</p>
 
-<p>The next interviewer covered one of the projects on my resume, followed by some more quick questions that covered sets, lists, and maps.  He then asked me to write a function that takes in two strings, A &amp; B.  The function then returns a String with the characters of A in the order of B.  An example of this is A: cat, B: tar, sorted: tac.  Notice how 'c' is not in B so it just pushed to end of the returned list.</p>
+<p>The next interviewer covered one of the projects on my resume, followed by some more quick questions that covered sets, lists, and maps.  He then asked me to write a function that takes in two strings, A &amp; B.  The function then returns a String with the characters of A in the order of B.  An example of this is A: cat, B: tar, sorted: tac.  Notice how 'c' is not in B so it is just pushed to end of the returned list.  I didn't quite finish my implementation during the interview but this is an example of a solution I wrote up afterwards.  I haven't tested it thoroughly but it works for simple cases.</p>
 
 <p>``` java Sort Example
 public static void main(String[] args) {</p>
@@ -88,6 +92,8 @@ public static String sort(String A, String B){
 </code></pre>
 
 <p>```</p>
+
+<p>After the interview I was not too happy with my performance but it was a great experience.  To prepare for it I have been reading Cracking the Coding Interview so I will keep going at that and schedule some more interviews for more practice.  I would definitely recommend the book for anyone who is interested in a Software Engineering position at a major technology company like Amazon, Google or Apple.</p>
 ]]></content>
   </entry>
   
