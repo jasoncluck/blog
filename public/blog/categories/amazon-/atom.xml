@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Amazon, | Jason Cluck]]></title>
   <link href="http://jcluck.herokuapp.com//blog/categories/amazon-/atom.xml" rel="self"/>
   <link href="http://jcluck.herokuapp.com//"/>
-  <updated>2013-01-10T19:27:19-05:00</updated>
+  <updated>2013-01-10T20:05:55-05:00</updated>
   <id>http://jcluck.herokuapp.com//</id>
   <author>
     <name><![CDATA[Jason Cluck]]></name>
@@ -35,7 +35,7 @@
 
 <p>The next interviewer covered one of the projects on my resume, followed by some more quick questions that covered sets, lists, and maps.  He then asked me to write a function that takes in two strings, A &amp; B.  The function then returns a String with the characters of A in the order of B.  An example of this is A: cat, B: tar, sorted: tac.  Notice how 'c' is not in B so it is just pushed to end of the returned list.  I didn't quite finish my implementation during the interview but this is an example of a solution I wrote up afterwards.  I haven't tested it thoroughly but it works for simple cases.</p>
 
-<p>``` java Sort Example
+<p>``` java SortExample.java
 public static void main(String[] args) {</p>
 
 <pre><code>    System.out.println(sort("catt", "tar"));
@@ -75,12 +75,12 @@ public static String sort(String A, String B){
     /* The last thing to do is append the additional elements in A but not in B to the returned string */
     for( char c : A.toCharArray()){
 
-        /* Case where the key didn't exist in b, append it to the end */
+        /* Case where the key didn't exist in B, append it to the end */
         if(hm.get(c) == null){
             sorted += c;
         }
 
-        /* Case where key did exist in b but not all the replicas were in B */
+        /* Case where key did exist in A but not all the replicas were in B */
         else if(hm.get(c) &gt; 0){
             sorted += c;
             hm.put(c, hm.get(c)-1); //decrement value in table

@@ -1,24 +1,100 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Jason Cluck]]></title>
-  <link href="http://jcluck.herokuapp.com//atom.xml" rel="self"/>
-  <link href="http://jcluck.herokuapp.com//"/>
-  <updated>2013-01-10T20:05:55-05:00</updated>
-  <id>http://jcluck.herokuapp.com//</id>
-  <author>
-    <name><![CDATA[Jason Cluck]]></name>
-    
-  </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Amazon Interview - Jason Cluck</title>
+  <meta name="author" content="Jason Cluck">
 
   
-  <entry>
-    <title type="html"><![CDATA[Amazon Interview]]></title>
-    <link href="http://jcluck.herokuapp.com//blog/2013/01/10/amazon/"/>
-    <updated>2013-01-10T15:23:00-05:00</updated>
-    <id>http://jcluck.herokuapp.com//blog/2013/01/10/amazon</id>
-    <content type="html"><![CDATA[<p>Today I had my phone interviews with Amazon for the Software Engineering Intern position in Seattle.  This was my first &#8220;real&#8221; technical interview and consisted of two 45 minute sessions.  Both interviewers were very nice and the they didn&#8217;t waste any time getting to the technical questions. It began with simple OO questions such as:</p>
+  <meta name="description" content="Today I had my phone interviews with Amazon for the Software Engineering Intern position in Seattle. This was my first &#8220;real&#8221; technical &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jcluck.herokuapp.com//blog/2013/01/10/amazon/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Jason Cluck" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Jason Cluck</a></h1>
+  
+    <h2>Programming - and other bits</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:jcluck.herokuapp.com/" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+
+  <li><a href="/about/">About</a></li>
+
+  <li><a href="/">Programming</a></li>
+
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Amazon Interview</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-10T15:23:00-05:00" pubdate data-updated="true">Jan 10<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Today I had my phone interviews with Amazon for the Software Engineering Intern position in Seattle.  This was my first &#8220;real&#8221; technical interview and consisted of two 45 minute sessions.  Both interviewers were very nice and the they didn&#8217;t waste any time getting to the technical questions. It began with simple OO questions such as:</p>
 
 <ul>
 <li><p>How are abstract classes and interfaces different?</p></li>
@@ -143,75 +219,164 @@
 
 
 <p>After the interview I was not too happy with my performance but it was a great experience.  To prepare for it I have been reading Cracking the Coding Interview so I will keep going at that and schedule some more interviews for more practice.  I would definitely recommend the book for anyone who is interested in a Software Engineering position at a major technology company like Amazon, Google or Apple.</p>
-]]></content>
-  </entry>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
   
-  <entry>
-    <title type="html"><![CDATA[Mixins and Duck Typing]]></title>
-    <link href="http://jcluck.herokuapp.com//blog/2012/08/13/mixins/"/>
-    <updated>2012-08-13T10:16:00-04:00</updated>
-    <id>http://jcluck.herokuapp.com//blog/2012/08/13/mixins</id>
-    <content type="html"><![CDATA[<p>When learning Ruby, there were a couple of features that really set it apart from other OO Languages (e.g. Java). The first of these features would have to be mixins.  A mixin is a collection of related behaviors that can be added to any class, although in some cases the class may have to fulfill a contract to use the mixin [1].  Mixins are implemented in Ruby using Modules.  A module is just a collection of class and instance methods that contain a framework for classes.  It is important to note that a module itself is not a class.  In other words, you can&#8217;t instantiate a module.  At first this sounds a whole lot like interfaces in Java but there are a couple of differences.  First, let&#8217;s look at an example of using a mixin:</p>
 
-<figure class='code'><figcaption><span>Mixin Example</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">A</span> <span class="o">&lt;</span> <span class="n">B</span> <span class="p">;</span> <span class="kp">include</span> <span class="no">MyModule</span> <span class="p">;</span> <span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
+<span class="byline author vcard">Posted by <span class="fn">Jason Cluck</span></span>
+
+      
 
 
-<p>Class A inherits from class B and class A also &#8220;mixes in&#8221; the module, MyModule.  The mixin will literally inline all the instance and class methods defined in MyModule into class A so they will be available once class A is instantiated.  Now how does this work with hierarchical inheritence in terms of priority?  A method call on an intance of class A will: Check class A itself for the method, then check any modules that were mixed-in, and lastly the call will go to class A&#8217;s method_missing handler which by default, punts the call to the superclass which is class B in this scenario.  Using mixins, the need for multiple inheritance is eliminated which allows for simpler code.</p>
-
-<!--more-->
 
 
-<p>An example of a mixin at work is found within the Array class.  An array mixes in the module Enumerable which lets the Array class respond to methods such as <em>all?</em>, <em>Any?</em>, <em>collect</em>, <em>find</em>, <em>inject</em>, <em>map</em>, etc.  Before Array responds to the Enumerable methods, it must first fulfill the contract defined by the Enumerable documentation.  In this case, it states that Array must provide an <em>each</em> method [2].  Sure enough, in the Array documentation <a href="http://www.ruby-doc.org/core-1.9.3/Array.html#method-i-each">each</a> is defined and we can view the source.</p>
-
-<p>This contract system is nice because only part of the contract needs to be fulfilled if the entire module will not be utilized.  Going back to Enumerable, the documentation states:</p>
-
-<p><em>&#8220;If Enumerable#max, #min, or #sort is used, the objects in the collection must also implement a meaningful &lt;=> operator, as these methods rely on an ordering between members of the collection.&#8221;</em></p>
-
-<p>The &lt;=> operator, or sometimes referred to as the rocketship operator, defines how elements in a collection compare to each other (like compareTo in Java).  The documentation states that unless we want the methods: {<em>#max</em>, <em>#min</em>, or <em>#sort</em>}, &lt;=> can remain undefined in the class which mixes in Enumerable.  The Array class should respond to these methods so it also defines &lt;=>.  By having a flexible contract system, mixins are easy to implement.</p>
-
-<p>Mixins are tied closely to Duck typing.  &#8220;Duck typing is a style of dynamic typing in which an object&#8217;s methods and properties determine the valid semantics, rather than its inheritance from a particular class or implementation of a specific interface&#8221;[3].  The name &#8220;Duck typing&#8221; comes from the idea that if a bird quacks and looks like a druck, it is a duck.  In Ruby an example would be if a class responds to methods like an Array, it is an Array.  Sometimes people refer to this behaviour as &#8220;quacking&#8221; (seriously)  so if something quacks like an ennumerable, we will treat it as such.  I think this really shows the thought process one should have when programming in Ruby.  Classes are not defined by what they inherit, but by what they respond to.  The code:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">a</span><span class="o">.</span><span class="n">foo</span>
-</span></code></pre></td></tr></table></div></figure>
 
 
-<p>  should be read as &#8220;call method foo on object a&#8221; where object a is the receiver.  Since classes are defined by the methods they respond to, mixins go well with duck typing.</p>
 
-<p>[1]: <a href="http://beta.saasbook.info/">Engineering Long-Lasting Software: An Agile Approach Using SaaS and Cloud Computing (Alpha Edition)</a>   <br/>
-[2]: <a href="http://ruby-doc.org/core-1.9.3/Enumerable.html">Enumerable Class Definition</a> <br/>
-[3]: <a href="http://en.wikipedia.org/wiki/Duck_typing">Duck Typing</a></p>
-]]></content>
-  </entry>
+
   
-  <entry>
-    <title type="html"><![CDATA[Hello World - Initial Commit]]></title>
-    <link href="http://jcluck.herokuapp.com//blog/2012/08/10/test-post/"/>
-    <updated>2012-08-10T11:20:00-04:00</updated>
-    <id>http://jcluck.herokuapp.com//blog/2012/08/10/test-post</id>
-    <content type="html"><![CDATA[<h2>Initial Thoughts</h2>
-
-<p>This blog is finally up and running - although it is far from where I want it!  I used <a href="http://octopress.org/">Octopress</a> to generate the blog and it was really easy to configure using the provided YAML config files. Part of the reason I tried Octopress was to not code the HTML from scratch and it seems to be doing the job.  It seems very similar to WordPress but I haven&#8217;t really used either extensively. Compared to web-based blogging alternatives like Tumblr, Octopress and Jekyll get a big +1 for letting me use <a href="http://en.wikipedia.org/wiki/Markdown">Markdown</a> and <a href="http://www.sublimetext.com/">Sublime Text 2</a>.</p>
-
-<!-- more -->
 
 
-<h2>Deployment</h2>
+<time datetime="2013-01-10T15:23:00-05:00" pubdate data-updated="true">Jan 10<span>th</span>, 2013</time>
+      
 
-<p>I have been using <a href="http://www.heroku.com/">Heroku</a> for over a month now to deploy Ruby/Rails web apps.  Heroku is a service for launching web apps using a cloud application platform.  It simplifies deployment, works well with git, and scales very nicely using &#8220;Dynos&#8221;.  Heroku utilizes the PostgreSQL database for apps in the production environment.  Of course, this database has all the common problems any SQL database seems to run into.  One of the creators of Heroku, Adam Wiggins, commented on database scaling:</p>
-
-<p>  <em>&#8220;A question I’m often asked about Heroku is: “How do you scale the SQL database?” There’s a lot of things I can say about using caching, sharding, and other techniques to take load off the database. But the actual answer is: we don’t. SQL databases are fundamentally non-scalable, and there is no magical pixie dust that we, or anyone, can sprinkle on them to suddenly make them scale.&#8221;</em></p>
-
-<p>The weakest link of a SaaS app always seems to the persistance layer and unfortunately, Heroku will not provide an answer for that.</p>
-
-<h2>Future Work</h2>
-
-<p>I plan on spending the rest of my summer focusing on Rails and the <a href="https://www.coursera.org/course/saas">SaaS course at UC Berkeley</a>.  I hope this blog will be able to help others who are also trying to learn more about SaaS developement.  In addition to publishing more content, I plan to update the CSS, and configure a custom DNS.  The updated code should be available on my <a href="https://github.com/jasoncluck">GitHub</a> in the blog repository. Let me know if you have any ideas or questions!</p>
-
-<p>-Jason</p>
-]]></content>
-  </entry>
+<span class="categories">
   
-</feed>
+    <a class='category' href='/blog/categories/amazon-/'>Amazon,</a>, <a class='category' href='/blog/categories/interviews/'>Interviews</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jcluck.herokuapp.com//blog/2013/01/10/amazon/" data-via="jasoncluck" data-counturl="http://jcluck.herokuapp.com//blog/2013/01/10/amazon/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/08/13/mixins/" title="Previous Post: Mixins and Duck Typing">&laquo; Mixins and Duck Typing</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/10/amazon/">Amazon Interview</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/13/mixins/">Mixins and Duck Typing</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/10/test-post/">Hello World - Initial Commit</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/jasoncluck">@jasoncluck</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'jasoncluck',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("jasoncluck", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/jasoncluck" class="twitter-follow-button" data-show-count="false">Follow @jasoncluck</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Jason Cluck -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
