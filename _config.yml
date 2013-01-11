@@ -6,7 +6,7 @@ url: http://jcluck.herokuapp.com/
 title: Jason Cluck
 subtitle: "Programming - and other bits"
 author: Jason Cluck
-simple_search: http://google.com/search
+#simple_search: http://google.com/search
 description:
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
@@ -15,11 +15,6 @@ description:
 # Additionally, %o will give you the ordinal representation of the day
 date_format: "ordinal"
 
-# RSS / Email (optional) subscription links (change if using something like Feedburner)
-subscribe_rss: /atom.xml
-subscribe_email:
-# RSS feeds can list your email address if you like
-email:
 
 # ----------------------- #
 #    Jekyll & Plugins     #
@@ -59,13 +54,13 @@ default_asides: [asides/recent_posts.html, asides/github.html, asides/twitter.ht
 
 # Github repositories
 github_user: jasoncluck
-github_repo_count: 0
+github_repo_count: 3
 github_show_profile_link: true
 github_skip_forks: true
 
 # Twitter
 twitter_user: jasoncluck
-twitter_tweet_count: 4
+twitter_tweet_count: 3
 twitter_show_replies: false
 twitter_follow_button: true
 twitter_show_follower_count: false
