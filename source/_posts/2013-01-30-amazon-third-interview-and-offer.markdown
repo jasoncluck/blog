@@ -20,7 +20,7 @@ The programming portion was next and I got on collabedit again.  The first quest
 
 I implemented version 2. of the anagram code with ASCII in Java and then he asked me another problem.  Given a value k, what is a good approach for returning the max k values from an unsorted array.  So if k=1 we return the max, k=2 we return the max and the second max etc.  I thought about this by starting with k=1.  It will take at least O(n) time to return just 1, but as k grows the compute time will grow rapidly.  I started thinking of data structures to use beginning with a BST (probably because it was fresh in my mind).  This would work because the elements are sorted but the tree traversals would get ugly and complicated.  I then decided on using a max-heap because it takes n time to assemble and can easily reorganize to provide the next element.
 
-I asked some questions about Amazon and then the interview was over.  After much anticipation I received an offer yesterday and spoke with a recruiter about all the details.  I have already accepted so I will moving to Seattle for the summer.  The team I will be working on is called eCPS which focuses on scalability and reliable with web services.  The website has more details [here]("http://ecps.amazon.com/").
+I asked some questions about Amazon and then the interview was over.  After much anticipation I received an offer yesterday and spoke with a recruiter about all the details.  I have already accepted so I will moving to Seattle for the summer.  The team I will be working on is called eCPS which focuses on scalability and reliable with web services.  The website has more details [here](http://ecps.amazon.com/).
 
 Some lessons that I learned: 
 
