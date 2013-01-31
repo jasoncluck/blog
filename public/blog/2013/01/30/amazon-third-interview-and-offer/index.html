@@ -1,0 +1,283 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Amazon - third interview and offer - Jason Cluck</title>
+  <meta name="author" content="Jason Cluck">
+
+  
+  <meta name="description" content="I was notified a few days after the first two Amazon interviews that they wanted to have a third interview. They had to reschedule once due to a &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jcluck.herokuapp.com//blog/2013/01/30/amazon-third-interview-and-offer/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="" rel="alternate" title="Jason Cluck" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Jason Cluck</a></h1>
+  
+    <h2>Programming - and other bits</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<ul class="main-navigation">
+
+  <li><a href="/about/">About</a></li>
+
+  <li><a href="/">Programming</a></li>
+
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Amazon - Third Interview and Offer</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-30T10:08:00-05:00" pubdate data-updated="true">Jan 30<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I was notified a few days after the first two Amazon interviews that they wanted to have a third interview.  They had to reschedule once due to a timing conflict but I had the third interview last Thursday (1/24).  The agenda was the same as the other interviews and began with questions about a Rails project I&#8217;ve done recently.  Next was some questions about binary search trees (glad I studied those).  I was able to answer these questions and figured out the number of leaf nodes and total nodes in a complete BST of height <strong>h</strong> by writing out an example.</p>
+
+<!--more-->
+
+
+<p>The programming portion was next and I got on collabedit again.  The first question was to write a function to tell if two strings are anagrams of each other.  I knew this one! I actually reviewed the solutions the day before so I told the interviewer it was a familiar problem and he had me solve it anyways.  I mentioned three solutions:</p>
+
+<ol>
+<li><p>Sort the strings using a basic sort such as quicksort to avoid using additional space - O(nlogn) time.  If the sorted strings are the same they are anagrams.</p></li>
+<li><p>Allocate an array that is the size of the total possible characters in the character set (ASCII or Unicode).  For the first string, increment the characters location in the array every time it is seen, then decrement it for the second string.  Check to see if the array is zeroed out and if so, its an anagram. This is similiar to counting sort.</p></li>
+<li><p>If we constrict the requirements to only allowing unique lowercase ASCII characters it becomes more feasible to do a bitwise solution.  Using an 32-bit int, we can bit shift over by that character&#8217;s value (subtract &#8216;a&#8217; from character to get bits 0-25).  Then flip the bits back if the second string also has any of the bits from the first string.  At the end just check to see if the int is equal to 0 and the result is an anagram.</p></li>
+</ol>
+
+
+<p>I implemented version 2. of the anagram code with ASCII in Java and then he asked me another problem.  Given a value k, what is a good approach for returning the max k values from an unsorted array.  So if k=1 we return the max, k=2 we return the max and the second max etc.  I thought about this by starting with k=1.  It will take at least O(n) time to return just 1, but as k grows the compute time will grow rapidly.  I started thinking of data structures to use beginning with a BST (probably because it was fresh in my mind).  This would work because the elements are sorted but the tree traversals would get ugly and complicated.  I then decided on using a max-heap because it takes n time to assemble and can easily reorganize to provide the next element.</p>
+
+<p>I asked some questions about Amazon and then the interview was over.  After much anticipation I received an offer yesterday and spoke with a recruiter about all the details.  I have already accepted so I will moving to Seattle for the summer.  The team I will be working on is called eCPS which focuses on scalability and reliable with web services.  The website has more details <a href="" title="http://ecps.amazon.com/">here</a>.</p>
+
+<p>Some lessons that I learned:</p>
+
+<ul>
+<li><p>Practice programming problems! Tons of these on StackOverflow, Careercup, Glassdoor etc.</p></li>
+<li><p>Take Steve Yegge&#8217;s advice and warm up the day of.  Do some really common interview problems like recursive tree traversals, hash tables, and string manipulation.</p></li>
+<li><p>Tell the interviewers if you&#8217;ve solved the problem before! People want honest teammates.</p></li>
+<li><p>Work on programming projects in your free time.  I&#8217;m pretty sure I only got an interview because I taught myself Rails and wrote some projects with it for fun.</p></li>
+</ul>
+
+
+<p>Anyways, I hope this helps someone else with getting the job they want!  I&#8217;d be glad to answer any questions via email: jcluck@gwmail.gwu.edu.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Jason Cluck</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-30T10:08:00-05:00" pubdate data-updated="true">Jan 30<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/amazon/'>Amazon</a>, <a class='category' href='/blog/categories/interviews/'>Interviews</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jcluck.herokuapp.com//blog/2013/01/30/amazon-third-interview-and-offer/" data-via="jasoncluck" data-counturl="http://jcluck.herokuapp.com//blog/2013/01/30/amazon-third-interview-and-offer/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/01/10/amazon/" title="Previous Post: Amazon Interview">&laquo; Amazon Interview</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/30/amazon-third-interview-and-offer/">Amazon - third interview and offer</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/01/10/amazon/">Amazon Interview</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/13/mixins/">Mixins and Duck Typing</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/10/test-post/">Hello World - Initial Commit</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/jasoncluck">@jasoncluck</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'jasoncluck',
+            count: 3,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("jasoncluck", 3, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/jasoncluck" class="twitter-follow-button" data-show-count="false">Follow @jasoncluck</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Jason Cluck -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
