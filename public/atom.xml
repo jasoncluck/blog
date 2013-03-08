@@ -4,7 +4,7 @@
   <title><![CDATA[Jason Cluck]]></title>
   <link href="http://jcluck.herokuapp.com//atom.xml" rel="self"/>
   <link href="http://jcluck.herokuapp.com//"/>
-  <updated>2013-01-31T15:19:35-05:00</updated>
+  <updated>2013-03-08T11:21:48-05:00</updated>
   <id>http://jcluck.herokuapp.com//</id>
   <author>
     <name><![CDATA[Jason Cluck]]></name>
@@ -12,6 +12,59 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby: Using splats with functions]]></title>
+    <link href="http://jcluck.herokuapp.com//blog/2013/03/08/ruby-overview-of-function-arguments-and-whats-new-in-2-dot-0/"/>
+    <updated>2013-03-08T01:05:00-05:00</updated>
+    <id>http://jcluck.herokuapp.com//blog/2013/03/08/ruby-overview-of-function-arguments-and-whats-new-in-2-dot-0</id>
+    <content type="html"><![CDATA[<p>Splats in Ruby can make your life easier.  The first example of this is to use a splat (asterisk in Ruby) to pass in an entire list to a function. Keep in mind that in Ruby a list can be pretty much anything.</p>
+
+<figure class='code'><figcaption><span>asteriskExample.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">convert_to_list</span><span class="p">(</span><span class="o">*</span><span class="n">list</span><span class="p">)</span>
+</span><span class='line'>  <span class="nb">puts</span> <span class="n">list</span><span class="o">.</span><span class="n">inspect</span>
+</span><span class='line'>  <span class="c1">#output[&quot;1&quot;, &quot;a&quot;, &quot;2&quot;, &quot;b&quot;, [&quot;foo&quot;, &quot;bar&quot;, &quot;1&quot;], &quot;alice&quot;, &quot;bob&quot;]</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="n">convert_to_list</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="o">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="o">]</span><span class="p">,</span> <span class="s1">&#39;alice&#39;</span><span class="p">,</span> <span class="s1">&#39;bob&#39;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<!--more-->
+
+
+<p>This can also be paired with Rails methods, such as extract_options!, to make some interesting functions.  This one takes in a list and extracts the last hash that&#8217;s passed in.  Othewise an empty hash is returned.  This could be utilized when passing params from the view to the controller. Notice the bang indicates that we are removing the hash entry from the passed in list.  This example also shows a splat splits up the remaining list arguments if there is some parameter before it such as first_num in this case.</p>
+
+<figure class='code'><figcaption><span>hashExample.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">get_options</span><span class="p">(</span><span class="n">first_num</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
+</span><span class='line'>  <span class="nb">puts</span> <span class="n">first_num</span><span class="o">.</span><span class="n">inspect</span>     <span class="c1"># =&gt; &quot;1&quot;</span>
+</span><span class='line'>  <span class="n">args</span><span class="o">.</span><span class="n">extract_options!</span>  <span class="c1"># =&gt; {:a=&gt;:x}</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="n">get_options</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="ss">:a</span> <span class="o">=&gt;</span> <span class="ss">:x</span><span class="p">,</span> <span class="ss">:b</span> <span class="o">=&gt;</span> <span class="ss">:y</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If we were to switch out the ordering of first_num and *args we could replicate the behavior of extract_options.  Splats can also be used to call a function with each item in a list.</p>
+
+<figure class='code'><figcaption><span>splatArgument.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">animals</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&quot;cats&quot;</span><span class="p">,</span> <span class="s2">&quot;dogs&quot;</span><span class="p">,</span> <span class="s2">&quot;werewolves&quot;</span><span class="o">]</span>
+</span><span class='line'><span class="n">my_function</span><span class="p">(</span><span class="o">*</span><span class="n">animals</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Lastly, a double splat (**) can be used to capture every keyword argument.  From what I&#8217;ve seen in Ruby 2.0.0 these are used for the last argument to capture all of the keywords if a default is not specified.  I&#8217;ll talk more about this is later posts since I just upgraded to 2.0.0 myself.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Amazon - third interview and offer]]></title>

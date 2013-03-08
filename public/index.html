@@ -9,7 +9,7 @@
   <meta name="author" content="Jason Cluck">
 
   
-  <meta name="description" content="I was notified a few days after the first two Amazon interviews that they wanted to have a third interview. They had to reschedule once due to a &hellip;">
+  <meta name="description" content="Splats in Ruby can make your life easier. The first example of this is to use a splat (asterisk in Ruby) to pass in an entire list to a function. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -61,6 +61,62 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/03/08/ruby-overview-of-function-arguments-and-whats-new-in-2-dot-0/">Ruby: Using Splats With Functions</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-08T01:05:00-05:00" pubdate data-updated="true">Mar 8<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Splats in Ruby can make your life easier.  The first example of this is to use a splat (asterisk in Ruby) to pass in an entire list to a function. Keep in mind that in Ruby a list can be pretty much anything.</p>
+
+<figure class='code'><figcaption><span>asteriskExample.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">convert_to_list</span><span class="p">(</span><span class="o">*</span><span class="n">list</span><span class="p">)</span>
+</span><span class='line'>  <span class="nb">puts</span> <span class="n">list</span><span class="o">.</span><span class="n">inspect</span>
+</span><span class='line'>  <span class="c1">#output[&quot;1&quot;, &quot;a&quot;, &quot;2&quot;, &quot;b&quot;, [&quot;foo&quot;, &quot;bar&quot;, &quot;1&quot;], &quot;alice&quot;, &quot;bob&quot;]</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="n">convert_to_list</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="o">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="o">]</span><span class="p">,</span> <span class="s1">&#39;alice&#39;</span><span class="p">,</span> <span class="s1">&#39;bob&#39;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/03/08/ruby-overview-of-function-arguments-and-whats-new-in-2-dot-0/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -252,6 +308,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/03/08/ruby-overview-of-function-arguments-and-whats-new-in-2-dot-0/">Ruby: Using splats with functions</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/01/30/amazon-third-interview-and-offer/">Amazon - third interview and offer</a>

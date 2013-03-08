@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Splats | Jason Cluck]]></title>
+  <link href="http://jcluck.herokuapp.com//blog/categories/splats/atom.xml" rel="self"/>
+  <link href="http://jcluck.herokuapp.com//"/>
+  <updated>2013-03-08T11:21:48-05:00</updated>
+  <id>http://jcluck.herokuapp.com//</id>
+  <author>
+    <name><![CDATA[Jason Cluck]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby: Using splats with functions]]></title>
+    <link href="http://jcluck.herokuapp.com//blog/2013/03/08/ruby-overview-of-function-arguments-and-whats-new-in-2-dot-0/"/>
+    <updated>2013-03-08T01:05:00-05:00</updated>
+    <id>http://jcluck.herokuapp.com//blog/2013/03/08/ruby-overview-of-function-arguments-and-whats-new-in-2-dot-0</id>
+    <content type="html"><![CDATA[<p>Splats in Ruby can make your life easier.  The first example of this is to use a splat (asterisk in Ruby) to pass in an entire list to a function. Keep in mind that in Ruby a list can be pretty much anything.</p>
+
+<p>``` ruby asteriskExample.rb
+def convert_to_list(*list)</p>
+
+<pre><code>puts list.inspect
+#output["1", "a", "2", "b", ["foo", "bar", "1"], "alice", "bob"]
+</code></pre>
+
+<p>end
+convert_to_list('1', 'a', '2', 'b', ['foo', 'bar', '1'], 'alice', 'bob')
+```</p>
+
+<!--more-->
+
+
+<p>This can also be paired with Rails methods, such as extract_options!, to make some interesting functions.  This one takes in a list and extracts the last hash that's passed in.  Othewise an empty hash is returned.  This could be utilized when passing params from the view to the controller. Notice the bang indicates that we are removing the hash entry from the passed in list.  This example also shows a splat splits up the remaining list arguments if there is some parameter before it such as first_num in this case.</p>
+
+<p>``` ruby hashExample.rb
+def get_options(first_num, *args)</p>
+
+<pre><code>puts first_num.inspect  # =&gt; "1"
+args.extract_options!   # =&gt; {:a=&gt;:x}
+</code></pre>
+
+<p>end
+get_options('1', 'a', '2', :a => :x, :b => :y)
+```</p>
+
+<p>If we were to switch out the ordering of first_num and *args we could replicate the behavior of extract_options.  Splats can also be used to call a function with each item in a list.</p>
+
+<p><code>ruby splatArgument.rb
+animals = ["cats", "dogs", "werewolves"]
+my_function(*animals)
+</code></p>
+
+<p>Lastly, a double splat (**) can be used to capture every keyword argument.  From what I've seen in Ruby 2.0.0 these are used for the last argument to capture all of the keywords if a default is not specified.  I'll talk more about this is later posts since I just upgraded to 2.0.0 myself.</p>
+]]></content>
+  </entry>
+  
+</feed>
